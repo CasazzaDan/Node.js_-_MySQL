@@ -98,14 +98,11 @@ function addQty() {
           }
           console.log(chosenItem);
         }
-        // let query = "UPDATE products SET ? WHERE ?"
-        // connection.query(query,
-        //   [
-        //     {
-        //       stock_quantity: ""
-        //     }
-        //   ]
-        // );
+
+        let query = "UPDATE products SET stock_quantity WHERE item_id"
+        connection.query(query, [newQty, res[i].item_id], function (err, res) {
+          // console.log UPDATE
+        });
       })
   })
   connection.end();
